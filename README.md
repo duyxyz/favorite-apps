@@ -30,9 +30,9 @@
 - [Git](https://git-scm.com/)
 - [Python](https://www.python.org/downloads/)
 
-## Lưu trữ
+## Lưu trữ & Chia sẻ file
 - [Google Drive for Desktop](https://support.google.com/a/users/answer/13022292?hl=en)
-
+- [Localsend](https://localsend.org/vi/download)
 ## Chat
 - [Zalo](https://zalo.me/pc)
 
@@ -40,3 +40,4 @@
 - [Steam](https://store.steampowered.com/)
 - [Valorant](https://playvalorant.com/vi-vn/download/)
 - [League of Legends](https://www.leagueoflegends.com/vi-vn/download/)
+ 
