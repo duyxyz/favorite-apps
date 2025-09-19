@@ -3,6 +3,8 @@
 ## Trình duyệt
 - [Google Chrome](https://www.google.com/chrome/)
 
+## Gõ Tiếng Việt
+- [unikey](https://www.unikey.org/download.html)
 ## Công cụ giải nén
 - [7-Zip](https://www.7-zip.org/)
 
