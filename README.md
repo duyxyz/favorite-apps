@@ -13,8 +13,8 @@
 - [Massgrave](https://massgrave.dev/)
 
 ## Runtime cần thiết
-- [abbodi1406 / vcredist (Visual C++ Redistributable)](https://github.com/abbodi1406/vcredist)
-- [DirectX End-User Runtime](https://www.microsoft.com/en-us/download/details.aspx?id=35)
+- [Visual C++ Redistributable](https://github.com/abbodi1406/vcredist)
+- [DirectX](https://www.microsoft.com/en-us/download/details.aspx?id=35)
 - [.NET Framework 3.5 + 4.8](https://dotnet.microsoft.com/en-us/download/dotnet-framework)
 
 ## Công cụ download
