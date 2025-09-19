@@ -8,13 +8,14 @@
 
 ## Tiện ích hệ thống
 - [Legion Toolkit](https://github.com/BartoszCichecki/LenovoLegionToolkit)
-- [Shell](https://github.com/moudey/Shell)
+- [Shell (File Manager)](https://github.com/moudey/Shell)
 - [ChrisTitusTech / winutil](https://github.com/ChrisTitusTech/winutil)
 - [Massgrave](https://massgrave.dev/)
 
 ## Runtime cần thiết
-- [vcredist](https://github.com/abbodi1406/vcredist)
-- [DirectX](https://www.microsoft.com/en-us/download/details.aspx?id=35)
+- [abbodi1406 / vcredist (Visual C++ Redistributable)](https://github.com/abbodi1406/vcredist)
+- [DirectX End-User Runtime](https://www.microsoft.com/en-us/download/details.aspx?id=35)
+- [.NET Framework 3.5 + 4.8](https://dotnet.microsoft.com/en-us/download/dotnet-framework)
 
 ## Công cụ download
 - [Internet Download Manager](https://www.internetdownloadmanager.com/)
