@@ -1,27 +1,34 @@
 # 📦 Ứng dụng mình hay dùng
 
+Danh sách các app / tool mình thường dùng. Click vào tên để tới trang chính thức hoặc repo.
+
+---
+
 ## 🌐 Trình duyệt
 - [Google Chrome](https://www.google.com/chrome/)
 
 ## 🗂️ Tiện ích hệ thống
 - [7-Zip](https://www.7-zip.org/)
-- [Shell (File Manager)](https://github.com/moudey/Shell)
 - [Legion Toolkit](https://github.com/BartoszCichecki/LenovoLegionToolkit)
+- [Shell (File Manager)](https://github.com/moudey/Shell)
+- [ChrisTitusTech / winutil](https://github.com/ChrisTitusTech/winutil)
+- [Massgrave](https://massgrave.dev/)
 
-## 🔧 Lập trình / Dev
+## 🔧 Công cụ download
+- [Internet Download Manager](https://www.internetdownloadmanager.com/)
+- [IDM-Activation-Script](https://github.com/lstprjct/IDM-Activation-Script)
+- [qBittorrent](https://www.qbittorrent.org/)
+
+## 👨‍💻 Lập trình / Dev
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Dev-C++](https://sourceforge.net/projects/orwelldevcpp/)
 - [Git](https://git-scm.com/)
 - [Python](https://www.python.org/downloads/)
 
-## ☁️ Lưu trữ & đồng bộ
+## ☁️ Lưu trữ
 - [Google Drive for Desktop](https://support.google.com/a/users/answer/13022292?hl=en)
 
-## 📥 Tải xuống
-- [Internet Download Manager](https://www.internetdownloadmanager.com/)
-- [qBittorrent](https://www.qbittorrent.org/)
-
-## 💬 Chat & liên lạc
+## 💬 Chat
 - [Zalo](https://zalo.me/pc)
 
 ## 🎮 Game
