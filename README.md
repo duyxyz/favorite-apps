@@ -8,13 +8,13 @@
 
 ## Tiện ích hệ thống
 - [Legion Toolkit](https://github.com/BartoszCichecki/LenovoLegionToolkit)
-- [Shell (File Manager)](https://github.com/moudey/Shell)
+- [Shell](https://github.com/moudey/Shell)
 - [ChrisTitusTech / winutil](https://github.com/ChrisTitusTech/winutil)
 - [Massgrave](https://massgrave.dev/)
 
 ## Runtime cần thiết
-- [abbodi1406 / vcredist](https://github.com/abbodi1406/vcredist)
-- [DirectX End-User Runtime](https://www.microsoft.com/en-us/download/details.aspx?id=35)
+- [vcredist](https://github.com/abbodi1406/vcredist)
+- [DirectX](https://www.microsoft.com/en-us/download/details.aspx?id=35)
 
 ## Công cụ download
 - [Internet Download Manager](https://www.internetdownloadmanager.com/)
