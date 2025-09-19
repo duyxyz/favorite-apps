@@ -4,11 +4,12 @@
 - [Google Chrome](https://www.google.com/chrome/)
 
 ## Gõ Tiếng Việt
-- [unikey](https://www.unikey.org/download.html)
+- [Unikey](https://www.unikey.org/download.html)
 ## Công cụ giải nén
 - [7-Zip](https://www.7-zip.org/)
 
 ## Tiện ích hệ thống
+- [Fxsound](https://www.fxsound.com/download)
 - [Legion Toolkit](https://github.com/BartoszCichecki/LenovoLegionToolkit)
 - [Shell](https://github.com/moudey/Shell)
 - [ChrisTitusTech / winutil](https://github.com/ChrisTitusTech/winutil)
