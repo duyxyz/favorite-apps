@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Favorite Apps</title>
+  <style>
+    :root { --w: 820px; --fg:#111; --bg:#fff; }
+    @media (prefers-color-scheme: dark){
+      :root { --fg:#eaeaea; --bg:#0b0b0c; }
+    }
+    body { margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--fg); background:var(--bg); }
+    main { max-width:var(--w); margin:20px auto; padding:0 16px; }
+    /* Markdown basics */
+    .md h1,.md h2,.md h3 { margin-top:1.2em; }
+    .md a { color:#0a66c2; text-decoration:none; }
+    .md a:hover { text-decoration:underline; }
+    .md ul { padding-left:1.2em; }
+    .md code { background:#00000011; padding:2px 4px; border-radius:6px; }
+    .md pre { background:#00000011; padding:14px; border-radius:10px; overflow:auto; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <main>
+    <article id="content" class="md"></article>
+  </main>
+
+  <script>
+    const url = "https://raw.githubusercontent.com/duyxyz/favorite-apps/main/README.md";
+    async function loadMarkdown(){
+      try{
+        const res = await fetch(url, { cache: "no-store" });
+        if(!res.ok) throw new Error(`HTTP ${res.status}`);
+        const md = await res.text();
+        const html = marked.parse(md, { headerIds:true, mangle:false });
+        document.getElementById("content").innerHTML =
+          DOMPurify.sanitize(html, { USE_PROFILES: { html: true } });
+      }catch(err){
+        document.getElementById("content").textContent =
+          "Lỗi tải README: " + err.message;
+      }
+    }
+    loadMarkdown();
+  </script>
+</body>
+</html>
