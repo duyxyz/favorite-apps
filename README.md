@@ -8,7 +8,7 @@
 
 ## Tiện ích hệ thống
 - [Legion Toolkit](https://github.com/BartoszCichecki/LenovoLegionToolkit)
-- [Shell (File Manager)](https://github.com/moudey/Shell)
+- [Shell](https://github.com/moudey/Shell)
 - [ChrisTitusTech / winutil](https://github.com/ChrisTitusTech/winutil)
 - [Massgrave](https://massgrave.dev/)
 
