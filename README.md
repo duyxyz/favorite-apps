@@ -31,6 +31,10 @@ irm "https://christitus.com/win" | iex
 ## Công cụ download
 - [Internet Download Manager](https://www.internetdownloadmanager.com/)
 - [IDM-Activation-Script](https://github.com/lstprjct/IDM-Activation-Script)
+```
+Invoke-WebRequest "https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/refs/heads/main/IAS.cmd" -OutFile "IAS.cmd"
+Start-Process "IAS.cmd"
+```
 - [qBittorrent](https://www.qbittorrent.org/)
 
 ## Lập trình / Dev
