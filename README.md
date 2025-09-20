@@ -15,7 +15,7 @@
 irm "https://christitus.com/win" | iex
 ```
 - [Massgrave](https://massgrave.dev/)
-   - For **Windows 8, 10, 11**: 📌
+   - For **Windows 8, 10, 11**: 
      ```
      irm https://get.activated.win | iex
      ```
