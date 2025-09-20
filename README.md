@@ -30,8 +30,7 @@ irm "https://christitus.com/win" | iex
 
 ## Công cụ download
 - [qBittorrent](https://www.qbittorrent.org/)
-- [Internet Download Manager](https://www.internetdownloadmanager.com/)
-- [IDM-Activation-Script](https://github.com/lstprjct/IDM-Activation-Script)
+- [IDM-Activation-Script](https://github.com/lstprjct/IDM-Activation-Script)  - [Internet Download Manager](https://www.internetdownloadmanager.com/)
 ```
 iwr "https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/refs/heads/main/IAS.cmd" -o IAS.cmd; ./IAS.cmd
 ```
