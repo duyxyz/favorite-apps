@@ -12,7 +12,7 @@
 - [Shell](https://github.com/moudey/Shell)
 - [ChrisTitusTech](https://github.com/ChrisTitusTech/winutil)
 ```
-irm "https://christitus.com/win" | iex
+     irm "https://christitus.com/win" | iex
 ```
 - [Massgrave](https://massgrave.dev/)
 ```
