@@ -29,12 +29,12 @@ irm "https://christitus.com/win" | iex
 - [.NET Framework 3.5 + 4.8](https://dotnet.microsoft.com/en-us/download/dotnet-framework)
 
 ## Công cụ download
+- [qBittorrent](https://www.qbittorrent.org/)
 - [Internet Download Manager](https://www.internetdownloadmanager.com/)
 - [IDM-Activation-Script](https://github.com/lstprjct/IDM-Activation-Script)
 ```
 iwr "https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/refs/heads/main/IAS.cmd" -o IAS.cmd; ./IAS.cmd
 ```
-- [qBittorrent](https://www.qbittorrent.org/)
 
 ## Lập trình / Dev
 - [Visual Studio Code](https://code.visualstudio.com/)
