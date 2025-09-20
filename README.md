@@ -49,6 +49,7 @@ iwr "https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/refs/heads
 - [Localsend](https://localsend.org/vi/download)
 ## Chat
 - [Zalo](https://zalo.me/pc)
+- [Telegram](https://desktop.telegram.org/)
 
 ## Game
 - [Steam](https://store.steampowered.com/)
