@@ -39,6 +39,7 @@
 
 ## Game
 - [Steam](https://store.steampowered.com/)
+- [Epic Games](https://store.epicgames.com/vi)
 - [Valorant](https://playvalorant.com/vi-vn/download/)
 - [League of Legends](https://www.leagueoflegends.com/vi-vn/download/)
  
