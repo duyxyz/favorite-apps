@@ -12,11 +12,11 @@
 - [Shell](https://github.com/moudey/Shell)
 - [ChrisTitusTech](https://github.com/ChrisTitusTech/winutil)
 ```
-     irm "https://christitus.com/win" | iex
+irm "https://christitus.com/win" | iex
 ```
 - [Massgrave](https://massgrave.dev/)
 ```
-     irm https://get.activated.win | iex
+irm https://get.activated.win | iex
 ```
 ## Runtime cần thiết
 - [Visual C++ Redistributable](https://github.com/abbodi1406/vcredist)
