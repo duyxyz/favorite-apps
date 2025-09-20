@@ -15,9 +15,14 @@
 irm "https://christitus.com/win" | iex
 ```
 - [Massgrave](https://massgrave.dev/)
-```
-irm https://get.activated.win | iex
-```
+   - For **Windows 8, 10, 11**: 📌
+     ```
+     irm https://get.activated.win | iex
+     ```
+   - For **Windows 7** and later:
+     ```
+     iex ((New-Object Net.WebClient).DownloadString('https://get.activated.win'))
+     ```
 ## Runtime cần thiết
 - [Visual C++ Redistributable](https://github.com/abbodi1406/vcredist)
 - [DirectX](https://www.microsoft.com/en-us/download/details.aspx?id=35)
