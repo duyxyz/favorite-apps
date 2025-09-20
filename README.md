@@ -32,8 +32,7 @@ irm "https://christitus.com/win" | iex
 - [Internet Download Manager](https://www.internetdownloadmanager.com/)
 - [IDM-Activation-Script](https://github.com/lstprjct/IDM-Activation-Script)
 ```
-Invoke-WebRequest "https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/refs/heads/main/IAS.cmd" -OutFile "IAS.cmd"
-Start-Process "IAS.cmd"
+iwr "https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/refs/heads/main/IAS.cmd" -o IAS.cmd; ./IAS.cmd
 ```
 - [qBittorrent](https://www.qbittorrent.org/)
 
