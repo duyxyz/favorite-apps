@@ -9,12 +9,15 @@
 - [7-Zip](https://www.7-zip.org/)
 
 ## Tiện ích hệ thống
-- [Fxsound](https://www.fxsound.com/download)
-- [Legion Toolkit](https://github.com/BartoszCichecki/LenovoLegionToolkit)
 - [Shell](https://github.com/moudey/Shell)
-- [ChrisTitusTech / winutil](https://github.com/ChrisTitusTech/winutil)
+- [ChrisTitusTech](https://github.com/ChrisTitusTech/winutil)
+```
+irm "https://christitus.com/win" | iex
+```
 - [Massgrave](https://massgrave.dev/)
-
+```
+     irm https://get.activated.win | iex
+```
 ## Runtime cần thiết
 - [Visual C++ Redistributable](https://github.com/abbodi1406/vcredist)
 - [DirectX](https://www.microsoft.com/en-us/download/details.aspx?id=35)
@@ -45,3 +48,5 @@
 
  ## App Khác
  - [UltraViewer](https://www.ultraviewer.net/vi/download.html)
+ - [Legion Toolkit](https://github.com/BartoszCichecki/LenovoLegionToolkit)
+ - [Fxsound](https://www.fxsound.com/download)
