@@ -5,30 +5,147 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Favorite Apps</title>
   <style>
-    :root { --w: 820px; --fg:#111; --bg:#fff; }
+    :root { --w: 820px; --fg:#111; --bg:#fff; --border:#d0d7de; --pagebg:#fff; }
     @media (prefers-color-scheme: dark){
-      :root { --fg:#eaeaea; --bg:#0b0b0c; }
+      :root { --fg:#eaeaea; --bg:#0d0d0d; --border:#30363d; --pagebg:#0d0d0d; }
     }
-    body { margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--fg); background:var(--bg); }
-    main { max-width:var(--w); margin:20px auto; padding:0 16px; }
-    /* Markdown basics */
-    .md h1,.md h2,.md h3 { margin-top:1.2em; }
-    .md a { color:#0a66c2; text-decoration:none; }
+    body {
+      margin:0;
+      font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--fg);
+      background:var(--pagebg);
+      overflow: auto;
+      scrollbar-width: none;
+    }
+    body::-webkit-scrollbar { display: none; }
+
+    article.md {
+      max-width: var(--w);
+      margin: 20px auto;
+      padding: 20px;
+      background: var(--bg);
+    }
+
+    /* Markdown GitHub-like */
+    .md h1,.md h2,.md h3,.md h4,.md h5,.md h6 {
+      margin:1.4em 0 .6em;
+      font-weight:600;
+      line-height:1.25;
+    }
+    .md h1 { font-size:2em; border-bottom:1px solid var(--border); padding-bottom:.3em; }
+    .md h2 { font-size:1.5em; border-bottom:1px solid var(--border); padding-bottom:.3em; }
+    .md h3 { font-size:1.25em; }
+    .md h4 { font-size:1.1em; }
+    .md h5,.md h6 { font-size:1em; }
+
+    .md a { color:#0969da; text-decoration:none; }
     .md a:hover { text-decoration:underline; }
-    .md ul { padding-left:1.2em; }
-    .md code { background:#00000011; padding:2px 4px; border-radius:6px; }
-    .md pre { background:#00000011; padding:14px; border-radius:10px; overflow:auto; }
+
+    .md p { margin:1em 0; }
+    .md ul,.md ol { padding-left:2em; margin:1em 0; }
+    .md li+li { margin-top:.25em; }
+
+    .md blockquote {
+      margin:1em 0;
+      padding:0.6em 1em;
+      border-left:0.25em solid var(--border);
+      color:#6a737d;
+      background:#f6f8fa;
+      border-radius:4px;
+    }
+    @media (prefers-color-scheme: dark){
+      .md blockquote { background:#161b22; color:#9ea7b3; }
+    }
+
+    .md code {
+      background:#f6f8fa;
+      padding:2px 5px;
+      border-radius:6px;
+      font-size:.95em;
+    }
+    @media (prefers-color-scheme: dark){
+      .md code { background:#161b22; }
+    }
+
+    .md pre {
+      background:#f6f8fa;
+      padding:14px;
+      border-radius:6px;
+      overflow:auto;
+      font-size:.9em;
+      position: relative;
+      cursor: pointer;
+      scrollbar-width: none;
+    }
+    .md pre::-webkit-scrollbar { display:none; }
+    .md pre code { background:transparent; padding:0; border-radius:0; }
+    @media (prefers-color-scheme: dark){
+      .md pre { background:#161b22; }
+    }
+
+    .md table {
+      border-collapse: collapse;
+      margin:1.2em 0;
+      width:100%;
+      display:block;
+      overflow-x:auto;
+      scrollbar-width: none;
+    }
+    .md table::-webkit-scrollbar { display:none; }
+    .md th, .md td {
+      border:1px solid var(--border);
+      padding:6px 13px;
+      background:#fff;
+    }
+    .md th { font-weight:600; text-align:left; }
+    @media (prefers-color-scheme: dark){
+      .md th, .md td { background:#0d1117; }
+    }
+
+    /* Hint "Copied" mica đen */
+    .copied-hint {
+      position: absolute;
+      top: 6px;
+      right: 10px;
+      font-size: 12px;
+      color: #fff;
+      background: rgba(20,20,20,0.6);
+      backdrop-filter: blur(12px) saturate(180%);
+      -webkit-backdrop-filter: blur(12px) saturate(180%);
+      padding: 2px 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.15);
+      opacity: 0;
+    }
+    .md pre.show-hint .copied-hint { opacity: 1; }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <main>
-    <article id="content" class="md"></article>
-  </main>
+  <article id="content" class="md">Đang tải nội dung...</article>
 
   <script>
     const url = "https://raw.githubusercontent.com/duyxyz/favorite-apps/main/README.md";
+
+    function enhanceCodeBlocks() {
+      document.querySelectorAll("pre").forEach(block => {
+        const hint = document.createElement("div");
+        hint.textContent = "Copied";
+        hint.className = "copied-hint";
+        block.appendChild(hint);
+
+        block.addEventListener("click", async () => {
+          const codeEl = block.querySelector("code");
+          const text = codeEl ? codeEl.innerText : block.innerText;
+          await navigator.clipboard.writeText(text);
+
+          block.classList.add("show-hint");
+          setTimeout(() => block.classList.remove("show-hint"), 1000);
+        });
+      });
+    }
+
     async function loadMarkdown(){
       try{
         const res = await fetch(url, { cache: "no-store" });
@@ -37,6 +154,7 @@
         const html = marked.parse(md, { headerIds:true, mangle:false });
         document.getElementById("content").innerHTML =
           DOMPurify.sanitize(html, { USE_PROFILES: { html: true } });
+        enhanceCodeBlocks();
       }catch(err){
         document.getElementById("content").textContent =
           "Lỗi tải README: " + err.message;
