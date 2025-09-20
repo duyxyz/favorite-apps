@@ -37,7 +37,7 @@ iwr "https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/refs/heads
 
 ## Lập trình / Dev
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [Dev-C++](https://sourceforge.net/projects/orwelldevcpp/)
+- [Dev-C++](https://github.com/Embarcadero/Dev-Cpp/releases)
 - [Git](https://git-scm.com/)
 - [Python](https://www.python.org/downloads/)
 
