@@ -3,142 +3,97 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Favorite Apps - Native Windows</title>
+  <title>Favorite Apps - Nền xanh da trời cực tối</title>
   <style>
     body {
       margin:0;
       font:14px/1.5 "Segoe UI", Arial, sans-serif;
-      background:#fff;
-      color:#000;
+      color:#fff;
+      overflow-x: hidden;
+      scrollbar-width: none;
+      background: #000011; /* ✨ xanh da trời cực tối */
     }
-    article.md {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 16px;
-      background:#fff;
-      border: 1px solid #dcdcdc;
-      border-radius: 6px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    body::-webkit-scrollbar { display: none; }
+
+    #noise {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
     }
 
-    /* Heading */
+    article.md {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background: rgba(30,30,30,0.55);
+      backdrop-filter: blur(12px);
+      box-sizing: border-box;
+      overflow-y: auto;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    article.md.show { opacity: 1; transform: translateY(0); }
+
+    .inner {
+      max-width: 900px;
+      margin: 15px auto;
+      padding: 0 20px 40px;
+    }
+
     .md h1,.md h2,.md h3 {
       margin:14px 0 6px;
       font-weight:600;
-      border-bottom:1px solid #e0e0e0;
+      border-bottom:1px solid rgba(255,255,255,0.2);
       padding-bottom:4px;
     }
     .md h1 { font-size:20px; }
     .md h2 { font-size:17px; }
     .md h3 { font-size:15px; border:none; }
 
-    /* Table */
-    .md table {
-      border-collapse: collapse;
-      width:100%;
-      margin:12px 0;
-      font-size:13px;
-    }
-    .md th, .md td {
-      border:1px solid #e0e0e0;
-      padding:6px 10px;
-    }
-    .md th {
-      background:#f3f3f3;
-      text-align:left;
-    }
-    .md tr:hover td {
-      background:#f9f9f9;
-    }
+    .md table { border-collapse: collapse; width:100%; margin:12px 0; font-size:13px; }
+    .md th, .md td { border:1px solid rgba(255,255,255,0.2); padding:6px 10px; }
+    .md th { background: rgba(255,255,255,0.1); text-align:left; }
+    .md tr:hover td { background: rgba(255,255,255,0.05); }
 
-    /* Code block */
     .md pre {
-      background:#f9f9f9;
-      border:1px solid #dcdcdc;
+      background: rgba(0,0,0,0.5);
+      border:1px solid rgba(255,255,255,0.15);
       padding:10px;
       font-size:13px;
       overflow:auto;
       border-radius:4px;
       position: relative;
       cursor: pointer;
+      color:#fff;
     }
-    .md code {
-      font-family: Consolas, monospace;
-    }
+    .md code { font-family: Consolas, monospace; }
 
-    /* Copied hint */
     .copied-hint {
       position: absolute;
       top: 6px;
       right: 8px;
       font-size: 12px;
-      color: #000;
-      background: #fff;
+      color: #fff;
+      background: rgba(0,0,0,0.6);
       padding: 2px 8px;
-      border: 1px solid #dcdcdc;
+      border: 1px solid rgba(255,255,255,0.2);
       border-radius: 4px;
       opacity: 0;
-      transition: opacity 0.15s;
-    }
-    .md pre.show-hint .copied-hint {
-      opacity: 1;
     }
 
-    /* Links */
-    .md a {
-      color:#0067c0;
-      text-decoration:none;
-    }
-    .md a:hover {
-      text-decoration:underline;
-    }
-
-    /* Dark mode */
-    @media (prefers-color-scheme: dark) {
-      body {
-        background:#1e1e1e;
-        color:#eaeaea;
-      }
-      article.md {
-        background:#252526;
-        border:1px solid #333;
-        box-shadow:none;
-      }
-      .md h1,.md h2,.md h3 {
-        border-bottom:1px solid #333;
-      }
-      .md th, .md td {
-        border:1px solid #333;
-      }
-      .md th {
-        background:#2d2d2d;
-      }
-      .md tr:hover td {
-        background:#333;
-      }
-      .md pre {
-        background:#2d2d2d;
-        border:1px solid #333;
-        color:#f3f3f3;
-      }
-      .copied-hint {
-        background:#2d2d2d;
-        border:1px solid #444;
-        color:#f3f3f3;
-      }
-      .md a {
-        color:#3794ff;
-      }
-      .md a:hover {
-        color:#62afff;
-      }
-    }
+    .md a { color:#4da6ff; text-decoration:none; }
+    .md a:hover { text-decoration:underline; }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
 </head>
 <body>
-  <article id="content" class="md">Đang tải nội dung...</article>
+  <canvas id="noise"></canvas>
+  <article id="content" class="md">
+    <div class="inner">Đang tải nội dung...</div>
+  </article>
 
   <script>
     const url = "https://raw.githubusercontent.com/duyxyz/favorite-apps/main/README.md";
@@ -155,8 +110,8 @@
           const text = codeEl ? codeEl.innerText : block.innerText;
           await navigator.clipboard.writeText(text);
 
-          block.classList.add("show-hint");
-          setTimeout(() => block.classList.remove("show-hint"), 1000);
+          hint.style.opacity = 1;
+          setTimeout(() => { hint.style.opacity = 0; }, 1000);
         });
       });
     }
@@ -166,14 +121,38 @@
         const res = await fetch(url, { cache: "no-store" });
         const md = await res.text();
         const html = marked.parse(md, { headerIds:false, mangle:false });
-        document.getElementById("content").innerHTML =
-          DOMPurify.sanitize(html, { USE_PROFILES: { html: true } });
+        const container = document.querySelector("#content .inner");
+        container.innerHTML = DOMPurify.sanitize(html, { USE_PROFILES: { html: true } });
         enhanceCodeBlocks();
+        document.getElementById("content").classList.add("show");
       }catch(e){
-        document.getElementById("content").textContent = "Lỗi tải README";
+        document.querySelector("#content .inner").textContent = "Lỗi tải README";
       }
     }
     loadMarkdown();
+
+    // --- Noise động mịn ---
+    const noiseCanvas = document.getElementById("noise");
+    const nctx = noiseCanvas.getContext("2d");
+
+    function resizeNoise(){
+      noiseCanvas.width = window.innerWidth;
+      noiseCanvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resizeNoise);
+    resizeNoise();
+
+    function drawNoise(){
+      const imgData = nctx.createImageData(noiseCanvas.width, noiseCanvas.height);
+      for(let i=0;i<imgData.data.length;i+=4){
+        const v = Math.random()*255;
+        imgData.data[i]=imgData.data[i+1]=imgData.data[i+2]=v;
+        imgData.data[i+3]=6; // alpha thấp, noise mịn
+      }
+      nctx.putImageData(imgData,0,0);
+      requestAnimationFrame(drawNoise);
+    }
+    drawNoise();
   </script>
 </body>
 </html>
