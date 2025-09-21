@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Favorite Apps - Nền xanh da trời cực tối</title>
+  <title>Favorite Apps</title>
   <style>
     body {
       margin:0;
       font:14px/1.5 "Segoe UI", Arial, sans-serif;
       color:#fff;
       overflow-x: hidden;
-      scrollbar-width: none;
+      scrollbar-width: none; /* Firefox */
       background: #000011; /* ✨ xanh da trời cực tối */
     }
-    body::-webkit-scrollbar { display: none; }
+    body::-webkit-scrollbar { display: none; } /* Chrome, Edge, Safari */
 
     #noise {
       position: fixed;
@@ -33,7 +33,14 @@
       opacity: 0;
       transform: translateY(10px);
       transition: opacity 0.6s ease, transform 0.6s ease;
+
+      /* ẩn scrollbar */
+      scrollbar-width: none; /* Firefox */
     }
+    article.md::-webkit-scrollbar {
+      display: none; /* Chrome, Edge, Safari */
+    }
+
     article.md.show { opacity: 1; transform: translateY(0); }
 
     .inner {
