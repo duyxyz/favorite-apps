@@ -46,6 +46,7 @@ iwr "https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/refs/heads
 ## Lưu trữ & Chia sẻ file
 - [Google Drive for Desktop](https://support.google.com/a/users/answer/13022292?hl=en)
 - [Localsend](https://localsend.org/vi/download)
+- [Deskin](https://deskin.io/vi/download/deskin-personal)
 ## Chat
 - [Zalo](https://zalo.me/pc)
 - [Telegram](https://desktop.telegram.org/)
