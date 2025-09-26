@@ -1,4 +1,6 @@
-
+```
+gz283pvppi.cloudflare-gateway.com
+```
 
 ## Trình duyệt
 - [Google Chrome](https://www.google.com/chrome/)
@@ -58,4 +60,5 @@ iwr "https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/refs/heads
  - [UltraViewer](https://www.ultraviewer.net/vi/download.html)
  - [Legion Toolkit](https://github.com/BartoszCichecki/LenovoLegionToolkit)
  - [Fxsound](https://www.fxsound.com/download)
- - [NextDNS](https://nextdns.io/) 
+ - [NextDNS](https://nextdns.io/)
+   
