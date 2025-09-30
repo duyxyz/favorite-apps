@@ -56,6 +56,7 @@ iwr "https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/refs/heads
 - [Epic Games](https://store.epicgames.com/vi)
 - [Valorant](https://playvalorant.com/vi-vn/download/)
 - [League of Legends](https://www.leagueoflegends.com/vi-vn/download/)
+- [Roblox](https://www.roblox.com/vi/download)
 
  ## App Khác
  - [UltraViewer](https://www.ultraviewer.net/vi/download.html)
