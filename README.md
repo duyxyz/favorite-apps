@@ -62,4 +62,5 @@ iwr "https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/refs/heads
  - [Legion Toolkit](https://github.com/BartoszCichecki/LenovoLegionToolkit)
  - [Fxsound](https://www.fxsound.com/download)
  - [NextDNS](https://nextdns.io/)
+ - [Screenbox](https://apps.microsoft.com/detail/9ntsnmsvcb5l?hl=vi-VN&gl=VN)
    
