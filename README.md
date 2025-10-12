@@ -1,15 +1,22 @@
-```
-gz283pvppi.cloudflare-gateway.com
-```
+
 
 ## Trình duyệt
 - [Google Chrome](https://www.google.com/chrome/)
+- [Thorium](https://thorium.rocks/)
+- [Zen Browser](https://zen-browser.app/)
+- [AdblockBrowser](https://adblockbrowser.org/)
+## Extension
+- [uBlock Origin](https://ublockorigin.com/)
+- [MYNT: Material You New Tab](https://chromewebstore.google.com/detail/mynt-material-you-new-tab/jjpokbgpiljgndebfoljdeihhkpcpfgl?hl=vi&utm_source=ext_sidebar)
+- [Bitwarden](https://chromewebstore.google.com/detail/tr%C3%ACnh-qu%E1%BA%A3n-l%C3%BD-m%E1%BA%ADt-kh%E1%BA%A9u-bi/nngceckbapebfimnlniiiahkandclblb?hl=vi&utm_source=ext_sidebar)
+- [Simple Translate](https://chromewebstore.google.com/detail/simple-translate/ibplnjkanclpjokhdolnendpplpjiace?hl=vi&utm_source=ext_sidebar)
 
 ## Gõ Tiếng Việt
 - [Unikey](https://www.unikey.org/download.html)
 - [OpenKey](https://open-key.org/)
 ## Công cụ giải nén
 - [7-Zip](https://www.7-zip.org/)
+- [NanaZip](https://apps.microsoft.com/detail/9n8g7tscl18r?hl=vi-VN&gl=VN)
 
 ## Tiện ích hệ thống
 - [Shell](https://github.com/moudey/Shell)
@@ -65,4 +72,7 @@ iwr "https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/refs/heads
  - [Fxsound](https://www.fxsound.com/download)
  - [NextDNS](https://nextdns.io/)
  - [Screenbox](https://apps.microsoft.com/detail/9ntsnmsvcb5l?hl=vi-VN&gl=VN)
-   
+ ## DNS ADBLOCK  
+```
+gz283pvppi.cloudflare-gateway.com
+```
