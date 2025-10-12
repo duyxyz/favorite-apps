@@ -7,6 +7,7 @@ gz283pvppi.cloudflare-gateway.com
 
 ## Gõ Tiếng Việt
 - [Unikey](https://www.unikey.org/download.html)
+- [OpenKey](https://open-key.org/)
 ## Công cụ giải nén
 - [7-Zip](https://www.7-zip.org/)
 
