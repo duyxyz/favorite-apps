@@ -10,6 +10,8 @@
 - [MYNT: Material You New Tab](https://chromewebstore.google.com/detail/mynt-material-you-new-tab/jjpokbgpiljgndebfoljdeihhkpcpfgl?hl=vi&utm_source=ext_sidebar)
 - [Bitwarden](https://chromewebstore.google.com/detail/tr%C3%ACnh-qu%E1%BA%A3n-l%C3%BD-m%E1%BA%ADt-kh%E1%BA%A9u-bi/nngceckbapebfimnlniiiahkandclblb?hl=vi&utm_source=ext_sidebar)
 - [Simple Translate](https://chromewebstore.google.com/detail/simple-translate/ibplnjkanclpjokhdolnendpplpjiace?hl=vi&utm_source=ext_sidebar)
+- [Hide Scrollbar](https://chromewebstore.google.com/detail/hide-scrollbar/gngenlhkmpneoiicndbjghjhpogdcncl?hl=vi&utm_source=ext_sidebar)
+
 
 ## Gõ Tiếng Việt
 - [Unikey](https://www.unikey.org/download.html)
