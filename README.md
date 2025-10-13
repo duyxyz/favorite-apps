@@ -68,6 +68,7 @@ iwr "https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/refs/heads
 - [Valorant](https://playvalorant.com/vi-vn/download/)
 - [League of Legends](https://www.leagueoflegends.com/vi-vn/download/)
 - [Roblox](https://www.roblox.com/vi/download)
+- [Ẩn logo 18+ valorant](https://github.com/duyxyz/favorite-apps/releases/download/favorite/vng.bat)
 
  ## App Khác
  - [Legion Toolkit](https://github.com/BartoszCichecki/LenovoLegionToolkit)
