@@ -10,10 +10,10 @@
       font:14px/1.5 "Segoe UI", Arial, sans-serif;
       color:#fff;
       overflow-x: hidden;
-      scrollbar-width: none; /* Firefox */
-      background: #000011; /* ✨ xanh da trời cực tối */
+      scrollbar-width: none;
+      background: #000011;
     }
-    body::-webkit-scrollbar { display: none; } /* Chrome, Edge, Safari */
+    body::-webkit-scrollbar { display: none; }
 
     #noise {
       position: fixed;
@@ -33,14 +33,9 @@
       opacity: 0;
       transform: translateY(10px);
       transition: opacity 0.6s ease, transform 0.6s ease;
-
-      /* ẩn scrollbar */
-      scrollbar-width: none; /* Firefox */
+      scrollbar-width: none;
     }
-    article.md::-webkit-scrollbar {
-      display: none; /* Chrome, Edge, Safari */
-    }
-
+    article.md::-webkit-scrollbar { display: none; }
     article.md.show { opacity: 1; transform: translateY(0); }
 
     .inner {
@@ -65,34 +60,56 @@
     .md tr:hover td { background: rgba(255,255,255,0.05); }
 
     .md pre {
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.55);
       border:1px solid rgba(255,255,255,0.15);
-      padding:10px;
-      font-size:13px;
-      overflow:auto;
-      border-radius:4px;
+      padding:12px 14px;
+      font-size:14px;
+      border-radius:8px;
       position: relative;
       cursor: pointer;
       color:#fff;
+      overflow: hidden;
+      user-select: text;
+      transition: transform 0.15s ease, background 0.2s ease;
+      z-index: 0;
+    }
+    .md pre:hover {
+      background: rgba(30,30,30,0.65);
+      transform: scale(1.01);
     }
     .md code { font-family: Consolas, monospace; }
 
-    .copied-hint {
+    /* 🌊 Hiệu ứng Ripple chuẩn Android Material */
+    .ripple {
       position: absolute;
-      top: 6px;
-      right: 8px;
-      font-size: 12px;
-      color: #fff;
-      background: rgba(0,0,0,0.6);
-      padding: 2px 8px;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 4px;
-      opacity: 0;
+      border-radius: 50%;
+      transform: scale(0);
+      background: rgba(100,180,255,0.45);
+      animation: rippleAnim 0.7s ease-out;
+      pointer-events: none;
+      z-index: 1;
+      filter: blur(2px);
+    }
+
+    @keyframes rippleAnim {
+      0% {
+        transform: scale(0);
+        opacity: 0.7;
+      }
+      50% {
+        transform: scale(3);
+        opacity: 0.4;
+      }
+      100% {
+        transform: scale(6);
+        opacity: 0;
+      }
     }
 
     .md a { color:#4da6ff; text-decoration:none; }
     .md a:hover { text-decoration:underline; }
   </style>
+
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
 </head>
@@ -107,18 +124,26 @@
 
     function enhanceCodeBlocks() {
       document.querySelectorAll("pre").forEach(block => {
-        const hint = document.createElement("div");
-        hint.textContent = "Copied";
-        hint.className = "copied-hint";
-        block.appendChild(hint);
-
-        block.addEventListener("click", async () => {
+        block.addEventListener("click", async (e) => {
+          // copy
           const codeEl = block.querySelector("code");
-          const text = codeEl ? codeEl.innerText : block.innerText;
-          await navigator.clipboard.writeText(text);
+          const text = codeEl ? codeEl.textContent : block.textContent;
+          try {
+            await navigator.clipboard.writeText(text.trim());
+          } catch (err) {
+            console.warn("⚠️ Clipboard blocked (run via localhost or HTTPS)");
+          }
 
-          hint.style.opacity = 1;
-          setTimeout(() => { hint.style.opacity = 0; }, 1000);
+          // ripple effect
+          const rect = block.getBoundingClientRect();
+          const ripple = document.createElement("span");
+          ripple.className = "ripple";
+          const size = Math.max(rect.width, rect.height) * 0.75;
+          ripple.style.width = ripple.style.height = `${size}px`;
+          ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+          ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
+          block.appendChild(ripple);
+          ripple.addEventListener("animationend", () => ripple.remove());
         });
       });
     }
@@ -154,7 +179,7 @@
       for(let i=0;i<imgData.data.length;i+=4){
         const v = Math.random()*255;
         imgData.data[i]=imgData.data[i+1]=imgData.data[i+2]=v;
-        imgData.data[i+3]=6; // alpha thấp, noise mịn
+        imgData.data[i+3]=6;
       }
       nctx.putImageData(imgData,0,0);
       requestAnimationFrame(drawNoise);
