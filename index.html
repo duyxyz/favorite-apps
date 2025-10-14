@@ -59,6 +59,7 @@
     .md th { background: rgba(255,255,255,0.1); text-align:left; }
     .md tr:hover td { background: rgba(255,255,255,0.05); }
 
+    /* ⚡ CHỈ FIX Ở ĐÂY */
     .md pre {
       background: rgba(0,0,0,0.55);
       border:1px solid rgba(255,255,255,0.15);
@@ -68,18 +69,18 @@
       position: relative;
       cursor: pointer;
       color:#fff;
-      overflow: hidden;
       user-select: text;
+      overflow: auto;           /* ✅ Cho phép scroll lại */
       transition: transform 0.15s ease, background 0.2s ease;
       z-index: 0;
     }
+
     .md pre:hover {
       background: rgba(30,30,30,0.65);
       transform: scale(1.01);
     }
-    .md code { font-family: Consolas, monospace; }
 
-    /* 🌊 Hiệu ứng Ripple chuẩn Android Material */
+    /* 🌊 Ripple Android */
     .ripple {
       position: absolute;
       border-radius: 50%;
@@ -92,18 +93,9 @@
     }
 
     @keyframes rippleAnim {
-      0% {
-        transform: scale(0);
-        opacity: 0.7;
-      }
-      50% {
-        transform: scale(3);
-        opacity: 0.4;
-      }
-      100% {
-        transform: scale(6);
-        opacity: 0;
-      }
+      0% { transform: scale(0); opacity: 0.7; }
+      50% { transform: scale(3); opacity: 0.4; }
+      100% { transform: scale(6); opacity: 0; }
     }
 
     .md a { color:#4da6ff; text-decoration:none; }
@@ -131,14 +123,14 @@
           try {
             await navigator.clipboard.writeText(text.trim());
           } catch (err) {
-            console.warn("⚠️ Clipboard blocked (run via localhost or HTTPS)");
+            console.warn("⚠️ Clipboard bị chặn (chạy qua localhost hoặc https).");
           }
 
-          // ripple effect
+          // ripple
           const rect = block.getBoundingClientRect();
           const ripple = document.createElement("span");
           ripple.className = "ripple";
-          const size = Math.max(rect.width, rect.height) * 0.75;
+          const size = Math.max(rect.width, rect.height);
           ripple.style.width = ripple.style.height = `${size}px`;
           ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
           ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
