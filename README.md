@@ -75,6 +75,7 @@ iwr "https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/refs/heads
  - [Fxsound](https://www.fxsound.com/download)
  - [NextDNS](https://nextdns.io/)
  - [Screenbox](https://apps.microsoft.com/detail/9ntsnmsvcb5l?hl=vi-VN&gl=VN)
+ - [Fraps](https://fraps.com/)
  ## DNS ADBLOCK  
 ```
 gz283pvppi.cloudflare-gateway.com
