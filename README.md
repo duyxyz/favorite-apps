@@ -14,13 +14,14 @@
 
 
 ## Gõ Tiếng Việt
-- [Unikey](https://www.unikey.org/download.html)
+- [Unikey](https://github.com/duyxyz/favorite-apps/releases/download/favorite/Unikey.exe)
 - [EVKey](https://evkeyvn.com/)
 ## Công cụ giải nén
 - [7-Zip](https://www.7-zip.org/)
 - [NanaZip](https://apps.microsoft.com/detail/9n8g7tscl18r?hl=vi-VN&gl=VN)
 
 ## Tiện ích hệ thống
+- [ALt.Space](https://github.com/duyxyz/favorite-apps/releases/download/favorite/ALt.Space.exe)
 - [Shell](https://github.com/moudey/Shell)
 - [ChrisTitusTech](https://github.com/ChrisTitusTech/winutil)
 ```
