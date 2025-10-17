@@ -15,7 +15,7 @@
 
 ## Gõ Tiếng Việt
 - [Unikey](https://www.unikey.org/download.html)
-- [OpenKey](https://open-key.org/)
+- [EVKey](https://evkeyvn.com/)
 ## Công cụ giải nén
 - [7-Zip](https://www.7-zip.org/)
 - [NanaZip](https://apps.microsoft.com/detail/9n8g7tscl18r?hl=vi-VN&gl=VN)
@@ -76,6 +76,7 @@ iwr "https://raw.githubusercontent.com/lstprjct/IDM-Activation-Script/refs/heads
  - [NextDNS](https://nextdns.io/)
  - [Screenbox](https://apps.microsoft.com/detail/9ntsnmsvcb5l?hl=vi-VN&gl=VN)
  - [Fraps](https://fraps.com/)
+ - [Inno Setup](https://jrsoftware.org/isdl.php)
  ## DNS ADBLOCK  
 ```
 gz283pvppi.cloudflare-gateway.com
